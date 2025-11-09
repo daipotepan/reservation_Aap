@@ -1,0 +1,18 @@
+<header>
+  <% if @current_user && @current_user.id.present? %>
+    <%= image_tag @current_user.icon id = "icon"%>
+
+  <% else %>
+    <%= link_to "ログイン", users_login_path %>
+  <% end %>
+
+  <p>
+    <% if @current_user && @current_user.id.present? %>
+      <%= @current_user.name %>
+
+    <% else %>
+      <%= link_to "新規登録", new_user_path %>
+    <% end %>
+  </p>
+
+</header>

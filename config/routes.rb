@@ -11,4 +11,24 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  root "reservations#index"
+
+  resources :users, except: [:show]
+  resources :reservations
+  resources :rooms
+
+  get "users/login", to: "users#login"
+  post "users/login", to: "users#login"
+
+  delete "users/logout", to: "users#logout"
+
+  get "users/edit_account", to: "users#edit_account"
+  put "users/edit_account", to: "users#edit_account"
+
+  get "users/edit_profile", to: "users#edit_profile"
+  put "users/edit_profile", to: "users#edit_profile"
+
+  put "current_user", to: "users#current_user"
+
+
 end

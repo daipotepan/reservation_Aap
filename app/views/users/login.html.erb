@@ -1,0 +1,21 @@
+<h3>ログイン</h3>
+
+<%= form_with model: @user do |f|%>
+  <table>
+    <tr>
+      <th><%= f.label :email, "メールアドレス" %></th>
+      <td><%= f.text_field :email %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :password, "パスワード" %></th>
+      <td><%= f.text_field :password %></td>
+    </tr>
+  </table>
+
+  <div>
+    <ul>
+      <li><%= f.submit "ログインする" %></li>
+      <li><%= link_to "アカウント新規作成", new_user_path %></li>
+    </ul>
+  </div>
+<% end %>
